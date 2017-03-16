@@ -11,11 +11,11 @@
 		<div>
 			<c:url var="parkPicture" value="img/parks/${park.parkCode}.jpg" />
 
-			<a href="${detail}"> <img src="${parkPicture}" /></a>
+			<a href="${detail}" id="parkDetailLinkPicture"> <img src="${parkPicture}" /></a>
 		</div>
 		<div class="park">
 			<h4>
-				<a href="${detail}"><c:out value="${park.parkName}" /></a>
+				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkName}" /></a>
 			</h4>
 			<p>
 				<c:out value="${park.state}" />
