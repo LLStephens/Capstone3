@@ -9,4 +9,10 @@ public class SurveyResultPage {
 	public SurveyResultPage(WebDriver webDriver) {
 		this.webDriver = webDriver;
 	}
+	
+	public String verifySurveyPageLanding(){
+		String inputUrl = webDriver.getCurrentUrl();
+		String inputUrl2 = inputUrl.substring(0,52);
+		return inputUrl2;
+	}
 }
