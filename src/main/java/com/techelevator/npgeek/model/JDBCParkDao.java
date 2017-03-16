@@ -17,6 +17,13 @@ public class JDBCParkDao implements ParkDao{
 	public JDBCParkDao(DataSource dataSource) {
 		this.jdbcTemplate = new JdbcTemplate(dataSource);
 	}
+	
+	@Override
+	public void createPark(int acreage, int annualVisitorCount, String climate, int elevationInFeet, int entryFee, String inspirationalQuote, String inspirationalQuoteSource, float milesOfTrail,  int numberOfAnimalSpecies, int numberOfCampsites, String parkCode, String parkDescription, String parkName, String state, int yearFounded) {
+		String sqlNewPark = "insert into park (acreage, annualvisitorcount, climate, elevationinfeet, entryfee, inspirationalquote,inspirationalquotesource, milesoftrail, numberofanimalspecies, numberofcampsites, parkcode,parkdescription,parkname, state, yearfounded) values (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)";   
+		jdbcTemplate.update(sqlNewPark, acreage, annualVisitorCount, climate, elevationInFeet, entryFee, inspirationalQuote,inspirationalQuoteSource, milesOfTrail, numberOfAnimalSpecies, numberOfCampsites, parkCode,parkDescription,parkName, state, yearFounded);
+		
+	}
 
 	@Override
 	public List<Park> getAllParks() {
@@ -45,5 +52,7 @@ public class JDBCParkDao implements ParkDao{
 		}
 		return parkList;
 	}
+
+	
 
 }

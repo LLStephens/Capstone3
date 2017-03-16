@@ -9,7 +9,7 @@
 <div class="forecast">
 <form method="GET" action="${formAction}">
 	<div class = "formInputGroup">
-		<label for="temp">Temperature Unit: </label>
+
 		<c:choose>
 			<c:when test="${tempUnit=='farenheit'}">
 				<input type = "hidden" name="tempUnit" value="celsius"/>
@@ -37,8 +37,8 @@
 	<td><c:out value="${forecast.fiveDayForecastValue}" /></td>
 	<c:choose>
 		<c:when test = "${tempUnit=='farenheit'}">
-			<td><c:out value="${forecast.low}" />f</td>
-			<td><c:out value="${forecast.high}" />f</td>
+			<td><c:out value="${forecast.low}" /></td>
+			<td><c:out value="${forecast.high}" /></td>
 		</c:when>
 		<c:otherwise>
 			<td><fmt:formatNumber type="number" 

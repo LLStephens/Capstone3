@@ -7,8 +7,6 @@ public class Forecast {
 	private int high;
 	private String forecast;
 	
-	
-	
 	public String getParkCode() {
 		return parkCode;
 	}
