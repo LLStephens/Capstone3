@@ -52,7 +52,15 @@ public class ParkController {
 	@RequestMapping(path="/surveyResults", method=RequestMethod.GET)
 	public String showSurveyResults(HttpServletRequest request){
 		Survey result = surveyDao.getTopPark();
+		List<Park> parkList = parkDao.getAllParks();
+		Park ourPark = new Park();
+		for(Park park: parkList){
+			if (park.getParkCode().equals(result.getParkCode())){
+			ourPark = park;
+			}
+		}
 		request.setAttribute("result", result);
+		request.setAttribute("park", ourPark);
 		return "surveyResults";
 	}
 	

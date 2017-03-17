@@ -9,14 +9,16 @@
 </head>
 <body>
 	<header>
-		<h1>National Parks</h1>
+		<c:url var="logo" value="img/logo.png"/>
+		<img id="headerPicture" src="${logo}" />
+	
 	</header>
 	<nav>
 		<ul>
 			<c:url var="homeHref" value="/" />
-			<li><a href="${homeHref}">Home</a></li>
+			<li><a id = "linkColors" href="${homeHref}">Home</a></li>
 			<c:url var="surveyInputHref" value="/surveyInput" />
-			<li><a href="${surveyInputHref}">Take Survey</a></li>
+			<li><a id = "linkColors" href="${surveyInputHref}">Take Survey</a></li>
 
 		</ul>
 

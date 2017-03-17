@@ -4,6 +4,7 @@
 
 <div class="park">
 	<c:forEach var="park" items="${parkList}">
+	
 		<c:url var="detail" value="/parkDetail">
 			<c:param name="parkCode" value="${park.parkCode}"></c:param>
 		</c:url>
@@ -15,14 +16,12 @@
 		</div>
 		<div class="park">
 			<h4>
-				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkName}" /></a>
+				<a href="${detail}" id="parkDetailLinkName"><c:out value="${park.parkName}"/> </a><c:out value=" - ${park.state}" />
 			</h4>
-			<p>
-				<c:out value="${park.state}" />
-			</p>
-			<p>
+			<p id="theParkDescription">
 				<c:out value="${park.parkDescription}" />
 			</p>
+			<hr id="spanner"></hr>
 		</div>
 
 	</c:forEach>

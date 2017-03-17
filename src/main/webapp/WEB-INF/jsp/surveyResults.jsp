@@ -8,15 +8,13 @@
 	<c:param name="subTitle" value="Survey Results" />
 </c:import>
 
-<h2>The most popular park is:</h2>
-
 <div class="surveyResults">
-
 	<div class="surveyResult">
-		 <p><c:out value="${result.parkCode}" /></p>
-		 <p>With a total of <c:out value="${result.votes}" /> votes!!!!!!!</p>
-		 <c:url var="parkPicture" value="img/parks/${result.parkCode}.jpg"/>
+	<c:url var="parkPicture" value="img/parks/${result.parkCode}.jpg"/>
 		 <img src="${parkPicture}" />
+		 <p id="surveyResult"><c:out value="${park.parkName}" /><br>
+		 Voted best national park with <c:out value="${result.votes}" /> votes!!!!!!!</p>
+		 
 	 </div>
 
 </div>

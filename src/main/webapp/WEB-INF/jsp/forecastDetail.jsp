@@ -4,37 +4,33 @@
 <c:import url="/WEB-INF/jsp/common/header.jsp" />
 
 
-<h2>Your 5 day forecast</h2>
+<h2>Your 5 day forecast!!!</h2>
 
 <div class="forecast">
-<form method="GET" action="${formAction}">
-	<div class = "formInputGroup">
 
-		<c:choose>
-			<c:when test="${tempUnit=='farenheit'}">
-				<input type = "hidden" name="tempUnit" value="celsius"/>
-				<input type="submit" value="Change to Celsius" id = "button"/>
-			</c:when>
-			<c:otherwise>
-				<input type = "hidden" name="tempUnit" value="farenheit"/>
-				<input type="submit" value="Change to Farenheit"/>
-			</c:otherwise>
-		</c:choose>
-	<input type = "hidden" name="parkCode" value="${param.parkCode}"/>
-	</div>
-</form>
 	
-<table>
-	<tr>
-		<td>Day</td>
-		<td>Low</td>
-		<td>High</td>
-		<td>Forecast</td>
-		<td>Recommendations</td>
+<table class="table">
+	<tr class="row">
+		<td></td>
+		<td class="bottomborder"><strong>Day</strong></td>
+		<td class="bottomborder"><strong>Low</strong></td>
+		<td class="bottomborder"><strong>High</strong></td>
+		<td class="bottomborder"><strong>Forecast</strong></td>
+		<td class="bottomborder"><strong>Recommendations</strong></td>
 	</tr>
 <c:forEach var="forecast" items="${forecastList}">
 <tr>
-	<td><span id="dayNum"><c:out value="${forecast.fiveDayForecastValue}" /></span></td>
+	
+	<c:choose>
+		<c:when test="${forecast.forecast == 'partly cloudy'}">
+			<c:url var="weatherPicture" value="img/weather/partlyCloudy.png" />
+		</c:when>
+		<c:otherwise>
+			<c:url var="weatherPicture" value="img/weather/${forecast.forecast}.png" />
+		</c:otherwise>
+	</c:choose>
+	<td><img class="weatherpictures" src="${weatherPicture}"/></td>
+	<td class= "leftborder"><span id="dayNum"><c:out value="${forecast.fiveDayForecastValue}" /></span></td>
 	<c:choose>
 		<c:when test = "${tempUnit=='farenheit'}">
 			<td><span id="low"><c:out value="${forecast.low}" /></span></td>
@@ -76,4 +72,21 @@
 </tr>
 </c:forEach>
 </table>
+
+<form method="GET" action="${formAction}" id="forecastSubmit">
+	<div class = "formInputGroup">
+
+		<c:choose>
+			<c:when test="${tempUnit=='farenheit'}">
+				<input type = "hidden" name="tempUnit" value="celsius"/>
+				<input class = "buttoncolors" type="submit" value="Change to Celsius" id = "button"/>
+			</c:when>
+			<c:otherwise>
+				<input type = "hidden" name="tempUnit" value="farenheit"/>
+				<input class = "buttoncolors" type="submit" value="Change to Farenheit"/>
+			</c:otherwise>
+		</c:choose>
+	<input type = "hidden" name="parkCode" value="${param.parkCode}"/>
+	</div>
+</form>
 </div>

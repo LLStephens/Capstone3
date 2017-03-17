@@ -1,13 +1,15 @@
 ﻿* {
     margin: 0;
     padding: 0;
+    font-family:Geneva;
 }
 
 header {
     width: 100%;
-    background-color: #0099CC;
+    background-color: gray;
     color: white;
-    padding: 20px;
+    padding: 20px,0px,20px,0px;
+    text-align: center;
 }
 
 header p {
@@ -18,9 +20,10 @@ header p {
 nav {
     width: 100%;
     float: left;
-    background-color:#8DC63F;
-    padding: 20px;
+    background-color:#FFA500;
+    padding: 20px,0px,20px,0px;
     margin-bottom: 20px;
+    
 }
 
 nav li { 
@@ -29,6 +32,7 @@ nav li {
     margin-left: 25px;
     font-size: 1.2em;
     float: left;
+    font-family: Geneva;
 }
 
 nav li a { 
@@ -41,7 +45,9 @@ nav li a:hover {
     text-decoration: underline;
 }
 
-
+body{
+	background-color:gray;
+}
 
 section { 
     clear: both;
@@ -51,8 +57,10 @@ section {
     vertical-align: top;
     text-align: center;
     min-height: 450px;
-    background-color: #F2F1ED;
+    background-color: #b7b9bc;
+    background-color: #595858;
     border-radius: 7px;
+    padding-top:50px;
 }
 
 section li {
@@ -84,3 +92,156 @@ section p {
     padding: 15px;
 }
 
+#headerPicture{
+
+	width:30%;
+	height:12%;
+	background-color:gray;
+	
+}
+
+#linkColors{
+	color:black;
+	
+}
+
+#TheParkDescription{
+	font-size: 14px;
+	text-align: justify;
+}
+
+#parkDetailLinkName{
+	color:#FFA500;
+}
+
+#spanner{
+	width:90%;
+	height:1px;
+	border:none;
+	background-color:gray;
+	margin-bottom:20px;
+	margin-left: 5%;	
+}
+
+#spannerSurvey{
+	
+	width:135%;
+	height:1px;
+	border:none;
+	background-color:gray;
+	margin-bottom:7px;
+		
+}
+
+#entryForm{
+	float:left;
+	margin-left:5%;
+}
+
+.formInputGroup{
+	text-align:left;
+}
+
+.inputMargin{
+	margin-bottom: 10px;
+}
+
+.formSubmitButton{
+	align:center;
+	margin-top:60px;
+	margin-left: 170px;
+	border:none;
+	color:black;
+	background-color: #FFA500;
+	padding:10px 20px 10px 20px;
+	font-size:20px;
+	
+}
+
+#surveyResult{
+	margin:0px;
+}
+
+#clock{
+	color:black;
+	font-size:20px;
+	text-decoration:none;
+}
+
+.submitBox{
+	width:60%;
+	margin-left:5%;
+	margin-bottom:20px;
+	align:center;
+	background-color:#FFA500;
+	border:none;
+	color:black;
+	background-color: #FFA500;
+	padding:0px;
+	font-size:20px;
+	position:relative;
+	bottom:10px;
+	
+}
+
+#descriptionJustified{	
+
+	text-align: justify;    
+}
+
+.centered{
+	text-align:center;
+	margin: 0% 8% 0% 8%;
+}
+
+.paragraphstuff{
+	padding:0px;
+}
+
+#spannerDetails{
+	width:100%;
+	height:1px;
+	border:none;
+	background-color:gray;
+	margin-bottom:7px;
+}
+
+table,td{
+	border-color:white;
+	
+	
+	font-size:16px;
+	text-align:center;
+	
+	
+}
+
+.table{
+	
+	margin:0px 20px 0px 20px;
+	color:black;
+}
+
+.weatherpictures{
+	height:32%;
+	width: auto;
+	margin:0px;
+	padding:0px;
+}
+
+#forecastSubmit{
+	color: #FFA500;
+	position:relative;
+	left:40%;
+	margin:20px 0px 20px 0px;
+}
+
+.buttoncolors{
+	margin:15px 0px px px;
+	background-color:#FFA500;
+	padding: 10px;
+	margin-bottom:10px;
+}
+.bottomborder{
+	border-bottom: solid 2px;
+}
