@@ -34,27 +34,27 @@
 	</tr>
 <c:forEach var="forecast" items="${forecastList}">
 <tr>
-	<td><c:out value="${forecast.fiveDayForecastValue}" /></td>
+	<td><span id="value"><c:out value="${forecast.fiveDayForecastValue}" /></span></td>
 	<c:choose>
 		<c:when test = "${tempUnit=='farenheit'}">
-			<td><c:out value="${forecast.low}" /></td>
-			<td><c:out value="${forecast.high}" /></td>
+			<td><span id="low"><c:out value="${forecast.low}" /></span></td>
+			<td><span id="high"> <c:out value="${forecast.high}" /></span></td>
 		</c:when>
 		<c:otherwise>
-			<td><fmt:formatNumber type="number" 
-            maxFractionDigits="2" value="${(forecast.low-32)*5/9}" /></td>
-			<td><fmt:formatNumber type="number" 
-            maxFractionDigits="2" value="${(forecast.high-32)*5/9}" /></td>
+			<td><span id="clow"><fmt:formatNumber type="number" 
+            maxFractionDigits="2" value="${(forecast.low-32)*5/9}" /></span></td>
+			<td><span id="high"><fmt:formatNumber type="number" 
+            maxFractionDigits="2" value="${(forecast.high-32)*5/9}" /></span></td>
 		</c:otherwise>
 	
 	</c:choose>
 	<ul>
-	<td><c:out value="${forecast.forecast}" /></td>
+	<td><span id="forecast"><c:out value="${forecast.forecast}" /></span></td>
 	<td><c:if test="${forecast.high>75}">
 		<li>-Bring an extra gallon of water</li>
 	</c:if>
 	<c:if test="${forecast.high-forecast.low > 20}">
-		<li>-Wear breathable layers</li>
+		<li id="rec1">-Wear breathable layers</li>
 	</c:if>
 	<c:if test="${forecast.low<20}">
 		<li>-Don't freeze!!!!</li>
@@ -63,7 +63,7 @@
 		<li>-Pack snowshoes</li>
 	</c:if>
 	<c:if test="${forecast.forecast=='rain'}">
-		<li>-Pack rain gear and wear waterproof shoes</li>
+		<li id="rec2">-Pack rain gear and wear waterproof shoes</li>
 	</c:if>
 	<c:if test="${forecast.forecast=='thunderstorms'}">
 		<li>-Seek shelter and avoid hiking on exposed ridges</li>

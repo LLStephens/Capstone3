@@ -30,8 +30,11 @@ public class HomePage {
 		return new ParkDetailResultPage (webDriver);
 	}
 	
-//	public parkForecastResultPage clickForecastLink(){
-//		
-//	}
+	public ForecastResultPage clickForecastLink(){
+		WebElement link = webDriver.findElement(By.linkText("Click Here"));
+		link.click();
+		return new ForecastResultPage(webDriver);
+		
+	}
 	
 }
