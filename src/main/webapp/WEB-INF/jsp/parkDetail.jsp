@@ -31,7 +31,6 @@
 	</c:url>
 	<c:url var="formAction" value="/forecastDetail"></c:url>
 	
-	
-	<h6><a href="${forecast}" id="forecast">Click Here</a></h6><h6>For <c:out value="${park.parkName} - " /> 5 Day forecast!!!!!! </h6>
+	<h6><a href="${forecast}"><span id="forecastLink">Click Here</span></a></h6><h6>For <c:out value="${park.parkName} - " /> 5 Day forecast!!!!!! </h6>
 	
 </div>

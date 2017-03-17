@@ -36,12 +36,12 @@ public class ParkForecastSteps {
 	
 	@Then("^I land on (.*)$")
 	public void readForecastPage(String curl) throws Throwable{
-		forecastResult.verifyForecastResultPageLanding();
+		forecastResult.verifyForecastResultPageLanding(curl);
 	}
 	
 	@Then ("^the forecast value is (.*)$")
-	public void verifyForecastValue(String value) throws Throwable{
-		forecastResult.verifyFiveDayForecastValue(value);
+	public void verifyForecastValue(String dayNum) throws Throwable{
+		forecastResult.verifyFiveDayForecastValue(dayNum);
 	}
 	
 	@Then ("^the low is (.*)$")
@@ -51,7 +51,7 @@ public class ParkForecastSteps {
 	
 	@Then ("^the high is (.*)$")
 	public void verifyHigh(String high) throws Throwable{
-		forecastResult.verifyLow(high);
+		forecastResult.verifyHigh(high);
 	}
 	
 	@Then ("^forecast is (.*)$")

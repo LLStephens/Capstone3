@@ -31,10 +31,16 @@ public class HomePage {
 	}
 	
 	public ForecastResultPage clickForecastLink(){
-		WebElement link = webDriver.findElement(By.linkText("Click Here"));
+		WebElement link = webDriver.findElement(By.id("forecastLink"));
 		link.click();
 		return new ForecastResultPage(webDriver);
 		
+	}
+	
+	public ForecastResultPage clickCelsiusButton(){
+		WebElement link = webDriver.findElement(By.id("button"));
+		link.click();
+		return new ForecastResultPage(webDriver);
 	}
 	
 }

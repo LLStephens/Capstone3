@@ -12,10 +12,4 @@ And the first recommendation is -Wear breathable layers
 And the second recommendation is -Pack rain gear and wear waterproof shoes
 
 
-#Scenario: Get a Celsius forecast
-#Given I am on the Cuyahoga Valley National Park Farenheit forecast page
-#When I click the celsius button
-#Then I land on http://localhost:8080/m3-java-capstone/forecastDetail?tempUnit=celsius&parkCode=CVNP
-#And the low is 3.33
-#And the high is 16.67
 

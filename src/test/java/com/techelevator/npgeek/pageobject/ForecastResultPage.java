@@ -17,9 +17,9 @@ public class ForecastResultPage {
 		return outputParkCode.getText().equals(parkCode);
 	}
 	
-	public boolean verifyFiveDayForecastValue(String value){
-		WebElement outputValue = webDriver.findElement(By.id("value"));
-		return outputValue.getText().equals(value);
+	public boolean verifyFiveDayForecastValue(String dayNum){
+		WebElement outputValue = webDriver.findElement(By.id("dayNum"));
+		return outputValue.getText().equals(dayNum);
 	}
 
 	public boolean verifyLow(String low){
@@ -57,7 +57,11 @@ public class ForecastResultPage {
 		return outputRec2.getText().equals(rec2);	
 	}
 	
-	public String verifyForecastResultPageLanding(){
-		return "http://localhost:8080/m3-java-capstone/forecastDetail?parkCode=CVNP";
+	public boolean verifyForecastResultPageLanding(String curl){
+		return curl.equals("http://localhost:8080/m3-java-capstone/forecastDetail?parkCode=CVNP");
+	}
+	
+	public String verifyForecastCelsiusPageLanding(){
+		return "http://localhost:8080/m3-java-capstone/forecastDetail?tempUnit=celsius&parkCode=CVNP";
 	}
 }

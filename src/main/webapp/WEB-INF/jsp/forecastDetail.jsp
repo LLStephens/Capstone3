@@ -13,7 +13,7 @@
 		<c:choose>
 			<c:when test="${tempUnit=='farenheit'}">
 				<input type = "hidden" name="tempUnit" value="celsius"/>
-				<input type="submit" value="Change to Celsius"/>
+				<input type="submit" value="Change to Celsius" id = "button"/>
 			</c:when>
 			<c:otherwise>
 				<input type = "hidden" name="tempUnit" value="farenheit"/>
@@ -34,7 +34,7 @@
 	</tr>
 <c:forEach var="forecast" items="${forecastList}">
 <tr>
-	<td><span id="value"><c:out value="${forecast.fiveDayForecastValue}" /></span></td>
+	<td><span id="dayNum"><c:out value="${forecast.fiveDayForecastValue}" /></span></td>
 	<c:choose>
 		<c:when test = "${tempUnit=='farenheit'}">
 			<td><span id="low"><c:out value="${forecast.low}" /></span></td>
@@ -43,7 +43,7 @@
 		<c:otherwise>
 			<td><span id="clow"><fmt:formatNumber type="number" 
             maxFractionDigits="2" value="${(forecast.low-32)*5/9}" /></span></td>
-			<td><span id="high"><fmt:formatNumber type="number" 
+			<td><span id="chigh"><fmt:formatNumber type="number" 
             maxFractionDigits="2" value="${(forecast.high-32)*5/9}" /></span></td>
 		</c:otherwise>
 	
