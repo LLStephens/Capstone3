@@ -38,6 +38,13 @@
 		
 	</div>
 	
+<!-- 	          (woof) 
+         (oo) 
+   /------\/ 
+  / |    ||   
+ *  /\---/\ 
+    ~~   ~~  -->
+	
 	
 	
 	<c:url var="forecast" value="/forecastDetail">
